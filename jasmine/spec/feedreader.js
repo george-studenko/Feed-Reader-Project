@@ -26,12 +26,12 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
          it('URLs are defined', function() {
+            expect(allFeeds).toBeDefined();
             var urlIsDefined = true;
             // loop through the feed
             for(var i = 0; i < allFeeds.length; i++ ){
@@ -50,6 +50,7 @@ $(function() {
          * and that the name is not empty.
          */
          it('Names are defined', function() {
+           expect(allFeeds).toBeDefined();
             var nameIsDefined = true;
             // loop through the feed
             for(var i = 0; i < allFeeds.length; i++ ){
@@ -64,7 +65,6 @@ $(function() {
          });
     });
 
-
     /* TODO: Write a new test suite named "The menu" */
       describe('The menu', function() {
         /* TODO: Write a test that ensures the menu element is
@@ -73,6 +73,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('The menu is hidden by default', function() {
+           expect($('body')).toBeDefined();
           expect($('body')).toHaveClass('menu-hidden');
          })
 
@@ -82,6 +83,8 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('The menu changes visibility when the menu icon is clicked', function() {
+          expect($('body')).toBeDefined();
+          expect($('.menu-icon-link')).toBeDefined();
            $('.menu-icon-link').trigger( "click" );
            expect($('body')).not.toHaveClass('menu-hidden');
           })
