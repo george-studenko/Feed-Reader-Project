@@ -31,7 +31,19 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+         it('URLs are defined', function() {
+            var urlIsDefined = true;
+            // loop through the feed
+            for(var i = 0; i < allFeeds.length; i++ ){
+              /* if current feed url lenght is less than 8 after trimming spaces
+              * it means that the string does not even contain http://
+              */
+              if(allFeeds[i].url.trim().length<8){
+                urlIsDefined = false;
+              }
+            }
+             expect(urlIsDefined).toBe(true);
+         });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
