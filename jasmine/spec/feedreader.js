@@ -94,8 +94,9 @@ $(function() {
             expect(allFeeds.length).toBeGreaterThan(0);
             loadFeed(0, function() {
                 feedOne = $('.feed').html();
+                done();
             });
-            done();
+
         });
 
         it('A new feed is loaded when loadFeed is called a second time', function(done) {
