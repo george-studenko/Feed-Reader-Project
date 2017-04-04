@@ -49,6 +49,19 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('Names are defined', function() {
+            var nameIsDefined = true;
+            // loop through the feed
+            for(var i = 0; i < allFeeds.length; i++ ){
+              /* if current feed name lenght is less than 1 after trimming spaces
+              * it means the name is empty or that it contains only empty spaces
+              */
+              if(allFeeds[i].name.trim().length<1){
+                nameIsDefined = false;
+              }
+            }
+             expect(nameIsDefined).toBe(true);
+         });
     });
 
 
