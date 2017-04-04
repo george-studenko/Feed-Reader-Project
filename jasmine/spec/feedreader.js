@@ -90,6 +90,8 @@ $(function() {
         var feedTwo;
 
         beforeEach(function(done) {
+            expect(allFeeds).toBeDefined();
+            expect(allFeeds.length).toBeGreaterThan(0);
             loadFeed(0, function() {
                 feedOne = $('.feed').html();
             });
