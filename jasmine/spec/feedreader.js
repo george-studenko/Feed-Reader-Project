@@ -116,4 +116,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         var feedOne;
+         var feedTwo;
+         beforeEach(function(done){
+            expect(allFeeds).toBeDefined();
+            expect(allFeeds.length).toBeGreaterThan(0);
+            loadFeed(1,done);
+            feedOne = $('.feed').html();
+         });
+
+         it('A new feed is loaded when loadFeed is called a second time', function(done) {
+           loadFeed(0);
+           feedTwo = $('.feed').html();
+           expect(feedOne).not.toEqual(feedTwo);
+           done();
+         });
+    });
 }());
