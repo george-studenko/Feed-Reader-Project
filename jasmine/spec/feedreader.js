@@ -75,7 +75,7 @@ $(function() {
          it('The menu is hidden by default', function() {
            expect($('body')).toBeDefined();
           expect($('body')).toHaveClass('menu-hidden');
-         })
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -89,11 +89,10 @@ $(function() {
            expect($('body')).not.toHaveClass('menu-hidden');
            $('.menu-icon-link').trigger( "click" );
            expect($('body')).toHaveClass('menu-hidden');
-          })
+         });
       });
 
     /* TODO: Write a new test suite named "Initial Entries" */
-
     describe('Initial Entries', function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
