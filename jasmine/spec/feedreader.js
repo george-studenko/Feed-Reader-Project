@@ -106,7 +106,7 @@ $(function() {
          });
 
          it('There is at least a single .entry element', function(done) {
-           expect($('.entry-link').length).toBeGreaterThan(0);
+           expect($('.entry').length).toBeGreaterThan(0);
            done();
          });
     });
