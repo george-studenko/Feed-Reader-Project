@@ -105,8 +105,9 @@ $(function() {
             loadFeed(0,done);
          });
 
-         it('There is at least a single .entry element', function() {
+         it('There is at least a single .entry element', function(done) {
            expect($('.entry-link').length).toBeGreaterThan(0);
+           done();
          });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
