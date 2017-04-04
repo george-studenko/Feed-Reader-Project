@@ -87,6 +87,8 @@ $(function() {
           expect($('.menu-icon-link')).toBeDefined();
            $('.menu-icon-link').trigger( "click" );
            expect($('body')).not.toHaveClass('menu-hidden');
+           $('.menu-icon-link').trigger( "click" );
+           expect($('body')).toHaveClass('menu-hidden');
           })
       });
 
